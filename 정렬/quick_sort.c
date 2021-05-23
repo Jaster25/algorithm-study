@@ -4,24 +4,24 @@
 
 int partition(int *ar, int start, int end)
 {
-  // pivot: left
+  // Pivot: left
   int pivot = ar[start];
   int toRight = start + 1;
   int toLeft = end;
 
   while (toRight <= toLeft)
   {
-    // left section: find a value greater than pivot
+    // Left section: find a value larger than pivot
     while (toRight <= end && pivot >= ar[toRight])
       toRight++;
 
-    // right section: find a value less than pivot
+    // Right section: find a value less than pivot
     while (toLeft > start && pivot <= ar[toLeft])
       toLeft--;
 
     if (toRight > toLeft)
     {
-      // pivot <-> toLeft
+      // Pivot <-> toLeft
       ar[start] = ar[toLeft];
       ar[toLeft] = pivot;
     }
@@ -42,10 +42,10 @@ void quick_sort(int *ar, int start, int end)
   if (start >= end)
     return;
 
-  // divide
+  // Divide
   int pivot = partition(ar, start, end);
 
-  // conquer
+  // Conquer
   quick_sort(ar, start, pivot - 1);
   quick_sort(ar, pivot + 1, end);
 }
