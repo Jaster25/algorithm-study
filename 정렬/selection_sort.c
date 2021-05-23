@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 void selection_sort(int *ar, int size)
 {
@@ -17,15 +19,23 @@ void selection_sort(int *ar, int size)
 
 int main()
 {
-  int ar[10] = {10, 3, 7, 1, 4, 9, 2, 5, 8, 6};
+  srand((int)time(NULL));
+
+  int size = 20;
+  int *ar = malloc(sizeof(int) * size);
+
+  for (int i = 0; i < size; i++)
+    ar[i] = rand() % size;
 
   printf("Before selection sort\n");
-  for (int i = 0; i < sizeof(ar) / sizeof(int); i++)
+  for (int i = 0; i < size; i++)
     printf("%d ", ar[i]);
 
-  selection_sort(ar, sizeof(ar) / sizeof(int));
+  selection_sort(ar, size);
 
   printf("\nAfter selection sort\n");
-  for (int i = 0; i < sizeof(ar) / sizeof(int); i++)
+  for (int i = 0; i < size; i++)
     printf("%d ", ar[i]);
+
+  free(ar);
 }
