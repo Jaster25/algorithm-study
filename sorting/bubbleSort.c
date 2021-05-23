@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-void bubble_sort(int *ar, int size)
+void bubbleSort(int *ar, int size)
 {
   for (int i = 0; i < size; i++)
     for (int j = 0; j < size - i - 1; j++)
@@ -28,7 +28,7 @@ int main()
   for (int i = 0; i < size; i++)
     printf("%d ", ar[i]);
 
-  bubble_sort(ar, size);
+  bubbleSort(ar, size);
 
   printf("\nAfter bubble sort\n");
   for (int i = 0; i < size; i++)

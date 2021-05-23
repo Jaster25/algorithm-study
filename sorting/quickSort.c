@@ -37,7 +37,7 @@ int partition(int *ar, int start, int end)
   return toLeft;
 }
 
-void quick_sort(int *ar, int start, int end)
+void quickSort(int *ar, int start, int end)
 {
   if (start >= end)
     return;
@@ -46,8 +46,8 @@ void quick_sort(int *ar, int start, int end)
   int pivot = partition(ar, start, end);
 
   // Conquer
-  quick_sort(ar, start, pivot - 1);
-  quick_sort(ar, pivot + 1, end);
+  quickSort(ar, start, pivot - 1);
+  quickSort(ar, pivot + 1, end);
 }
 
 int main()
@@ -64,7 +64,7 @@ int main()
   for (int i = 0; i < size; i++)
     printf("%d ", ar[i]);
 
-  quick_sort(ar, 0, size - 1);
+  quickSort(ar, 0, size - 1);
 
   printf("\nAfter quick sort\n");
   for (int i = 0; i < size; i++)

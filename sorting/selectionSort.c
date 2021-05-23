@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-void selection_sort(int *ar, int size)
+void selectionSort(int *ar, int size)
 {
   for (int i = 0; i < size; i++)
   {
@@ -31,7 +31,7 @@ int main()
   for (int i = 0; i < size; i++)
     printf("%d ", ar[i]);
 
-  selection_sort(ar, size);
+  selectionSort(ar, size);
 
   printf("\nAfter selection sort\n");
   for (int i = 0; i < size; i++)

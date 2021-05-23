@@ -30,15 +30,15 @@ void merge(int *ar, int left, int mid, int right)
   free(temp);
 }
 
-void merge_sort(int *ar, int left, int right)
+void mergeSort(int *ar, int left, int right)
 {
   if (left < right)
   {
     int mid = (left + right) / 2;
 
     // Divide
-    merge_sort(ar, left, mid);
-    merge_sort(ar, mid + 1, right);
+    mergeSort(ar, left, mid);
+    mergeSort(ar, mid + 1, right);
 
     // Conquer
     merge(ar, left, mid, right);
@@ -59,7 +59,7 @@ int main()
   for (int i = 0; i < size; i++)
     printf("%d ", ar[i]);
 
-  merge_sort(ar, 0, size - 1);
+  mergeSort(ar, 0, size - 1);
 
   printf("\nAfter merge sort\n");
   for (int i = 0; i < size; i++)

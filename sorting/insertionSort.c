@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-void insertion_sort(int *ar, int size)
+void insertionSort(int *ar, int size)
 {
   for (int i = 1; i < size; i++)
   {
@@ -31,7 +31,7 @@ int main()
   for (int i = 0; i < size; i++)
     printf("%d ", ar[i]);
 
-  insertion_sort(ar, size);
+  insertionSort(ar, size);
 
   printf("\nAfter insertion sort\n");
   for (int i = 0; i < size; i++)
