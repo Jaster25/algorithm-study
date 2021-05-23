@@ -55,7 +55,7 @@ int main()
   srand((int)time(NULL));
 
   int size = 20;
-  int *ar = malloc(sizeof(int) * size);
+  int *ar = (int *)malloc(sizeof(int) * size);
 
   for (int i = 0; i < size; i++)
     ar[i] = rand() % size;

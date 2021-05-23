@@ -6,7 +6,7 @@
 
 void merge(int *ar, int left, int mid, int right)
 {
-  int *temp = malloc(sizeof(int) * (right - left + 1));
+  int *temp = (int *)malloc(sizeof(int) * (right - left + 1));
   int tempIndex = 0;
   int leftIndex = left;
   int rightIndex = mid + 1;
@@ -50,7 +50,7 @@ int main()
   srand((int)time(NULL));
 
   int size = 50;
-  int *ar = malloc(sizeof(int) * size);
+  int *ar = (int *)malloc(sizeof(int) * size);
 
   for (int i = 0; i < size; i++)
     ar[i] = rand() % size;
