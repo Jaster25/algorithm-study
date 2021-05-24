@@ -2,31 +2,33 @@ import random
 from collections import deque
 
 size = 20
-ar = [random.randrange(0, 1000) for _ in range(size)]
-
-Q = [deque() for _ in range(10)]
+ar = [random.randrange(0, size) for _ in range(size)]
 
 
-def radixSort(ar):
-    maxRadix = len(str(max(ar)))
+def radixSort():
+    global ar
+    maxRadix = len(str(max(ar))) - 1
+    Bucket = [deque() for _ in range(10)]
 
     for i in range(maxRadix + 1):
         for data in ar:
-            Q[int(str(data)[len(str(data)) - 1 - i])].append(data)
+            if len(str(data)) - 1 < i:
+                Bucket[0].append(data)
+            else:
+                Bucket[int(str(data)[len(str(data)) - 1 - i])].append(data)
 
-        ar = []
+        temp = []
         for j in range(10):
-            while Q[j]:
-                ar.append(Q[j].popleft())
-
-    print(ar)
+            while Bucket[j]:
+                temp.append(Bucket[j].popleft())
+        ar = temp
 
 
 if __name__ == "__main__":
     print("Before radix sort")
     print(ar)
 
-    radixSort(ar)
+    radixSort()
 
     print("After radix sort")
     print(ar)
